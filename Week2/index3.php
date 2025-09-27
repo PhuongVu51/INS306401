@@ -11,7 +11,8 @@
         This is x value:
         <?php
             $x = 5;
-            echo "The value of x is: " . $x;
+            var_dump($x);
+            //echo "The value of x is: " . $x;
         ?>
     </p>
 </body>
