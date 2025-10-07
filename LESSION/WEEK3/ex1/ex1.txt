@@ -1,0 +1,27 @@
+-- SQL file for Laptop Shop Management System
+-- Database: LaptopShop
+-- Table: laptops
+-- Create database
+CREATE DATABASE IF NOT EXISTS `LaptopShop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `LaptopShop`;
+-- Create laptops table for laptop data
+CREATE TABLE IF NOT EXISTS `laptops` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `brand` varchar(100) NOT NULL,
+    `model` varchar(100) NOT NULL,
+    `price` decimal(10,2) NOT NULL,
+    `stock` int(11) NOT NULL,
+    PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- Insert sample data (optional)
+INSERT INTO `laptops` (`brand`, `model`, `price`, `stock`) VALUES
+('Dell', 'XPS 13', 999.99, 10),
+('Apple', 'MacBook Air', 1199.99, 5),
+('HP', 'Spectre x360', 1099.99, 8);
+('Lenovo', 'ThinkPad X1 Carbon', 1299.99, 7);
+('Asus', 'ZenBook 14', 899.99, 12);
+('Acer', 'Swift 3', 749.99, 15);
+('Microsoft', 'Surface Laptop 4', 999.99, 6);
+('Razer', 'Blade 15', 1599.99, 4);
+('MSI', 'Stealth 15M', 1399.99, 3);
+('Samsung', 'Galaxy Book Pro', 1099.99, 9);
