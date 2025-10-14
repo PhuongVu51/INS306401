@@ -2,15 +2,18 @@
 session_start();
 
 /* connect to database check user*/
-$con=mysqli_connect('localhost','root');
-mysqli_select_db($con,login_demo);
+$con=mysqli_connect('localhost','root','');
+mysqli_select_db($con,'login_demo');
 
 /* create variables to store data */
 $name =$_POST['user'];
 $pass =$_POST['password'];
 
-/* select data from DB */
-$s="select * from users where name='$name'&& password='$pass'";
+// Mã hóa mật khẩu người dùng nhập vào
+$hashed_pass = md5($pass); 
+
+// So sánh username và mật khẩu đã mã hóa
+$s = "select * from users where username='$name' and password='$hashed_pass'";
 
 /* result variable to store data */
 $result = mysqli_query($con,$s);

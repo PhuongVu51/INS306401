@@ -50,6 +50,24 @@
                                 <input type="password" name="password" class="form-control" required>
                             </label>
                         </div>
+                        <div>
+                            <label>Date of Birth:</label>
+                            <input type="text" name="namsinh" class="form-control" required>
+                        </div>
+
+                        <div>
+                            <label>Nationality:</label>
+                            <input type="text" name="quoctich" class="form-control" required>
+                        </div>
+                        <div>
+                            <label> Student ID:</label>
+                            <input type="text" name="mssv" class="form-control" required>
+                        </div>
+                        <div>
+                            <label>Gender:</label>
+                            <input type="text" name="gioitinh" class="form-control" required>
+                        </div>
+            
                         <button type="submit" class="btn btn-primary">Register</button>
                     </form>
 

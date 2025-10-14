@@ -8,5 +8,9 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL
 );
  
-INSERT INTO users (username, password)
+INSERT INTO users (username, )
 VALUES ('admin', MD5('123456'));login_demo
+
+ALTER TABLE users
+ADD COLUMN namsinh INT NULL,
+ADD COLUMN quoctich VARCHAR(50) NULL;

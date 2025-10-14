@@ -1,16 +1,20 @@
 <?php
 session_start();
-header("location:login.php");
+
 /* connect to database check user*/
-$con=mysqli_connect('localhost','root');
-mysqli_select_db($con,LoginReg);
+$con=mysqli_connect('localhost','root','');
+mysqli_select_db($con,'login_demo');
 
 /* create variables to store data */
 $name =$_POST['user'];
 $pass =$_POST['password'];
+$namsinh = (int)$_POST['namsinh'];
+$quoctich = $_POST['quoctich'];
+$mssv = (int)$_POST['mssv'];
+$gioitinh = $_POST['gioitinh'];
 
 /* select data from DB */
-$s="select * from userReg where name='$name'";
+$s="select * from users where username='$name'";
 
 /* result variable to store data */
 $result = mysqli_query($con,$s);
@@ -20,7 +24,8 @@ $num =mysqli_num_rows($result);
 if($num==1){
     echo "Username Exists";
 }else{
-    $reg ="insert into userReg(name,password) values ('$name','$pass')";
+    $reg = "INSERT INTO users(username, password, namsinh, quoctich,mssv, gioitinh) VALUES ('$name', md5('$pass'), '$namsinh', '$quoctich', '$mssv', '$gioitinh')";
+
     mysqli_query($con,$reg);
     echo "registration successful";
 }
